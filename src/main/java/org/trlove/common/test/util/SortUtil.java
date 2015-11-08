@@ -1,10 +1,10 @@
 package org.trlove.common.test.util;
 
-import com.google.common.collect.Lists;
-import org.apache.commons.collections.CollectionUtils;
-
 import java.util.Comparator;
 import java.util.List;
+
+import com.google.common.collect.Lists;
+import org.apache.commons.collections.CollectionUtils;
 
 public class SortUtil {
 
@@ -15,6 +15,7 @@ public class SortUtil {
                 originList.clear();
                 for(int index = 0; index < result.size(); index++) {
                     originList.add(index, result.get(index));
+
                 }
             }
         }

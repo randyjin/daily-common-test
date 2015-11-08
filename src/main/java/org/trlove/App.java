@@ -10,14 +10,11 @@ import java.util.List;
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         List<Long> originList = new ArrayList<Long>();
-        for(int index = 0; index < 100000; index++) {
+        for (int index = 0; index < 100000; index++) {
             originList.add((long) (Math.random() * 9000));
         }
         Long current = System.currentTimeMillis();
@@ -33,7 +30,7 @@ public class App
         }, SortTypeEnum.快速排序);
         System.out.println(System.currentTimeMillis() - current);
         originList.clear();
-        for(int index = 0; index < 100000; index++) {
+        for (int index = 0; index < 100000; index++) {
             originList.add((long) (Math.random() * 9000));
         }
         current = System.currentTimeMillis();
