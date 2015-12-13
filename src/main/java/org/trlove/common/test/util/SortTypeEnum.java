@@ -5,7 +5,9 @@ package org.trlove.common.test.util;
  */
 public enum SortTypeEnum {
 
-    快速排序("quickSort");
+    快速排序("quickSort"),
+    堆排序("heapSort"),
+    归并排序("mergeSort");
 
     private String code;
 

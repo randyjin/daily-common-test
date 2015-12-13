@@ -8,15 +8,21 @@ import org.apache.commons.collections.CollectionUtils;
 
 public class SortUtil {
 
-    public static <T> void sort(List<T> originList, Comparator<T> comparator, SortTypeEnum sortType) {
+    public static <T> void sort(List<T> originList, Comparator<T> comparator,
+                                SortTypeEnum sortType) {
+        List<T> result = null;
         if (SortTypeEnum.快速排序.equals(sortType)) {
-            List<T> result = quickSort(originList, comparator);
-            if(CollectionUtils.isNotEmpty(result)) {
-                originList.clear();
-                for(int index = 0; index < result.size(); index++) {
-                    originList.add(index, result.get(index));
+            result = quickSort(originList, comparator);
+        } else if (SortTypeEnum.堆排序.equals(sortType)) {
+            result = heapSort(originList, comparator);
+        } else if (SortTypeEnum.归并排序.equals(sortType)) {
+            result = mergeSort(originList, comparator);
+        }
+        if (CollectionUtils.isNotEmpty(result)) {
+            originList.clear();
+            for (int index = 0; index < result.size(); index++) {
+                originList.add(index, result.get(index));
 
-                }
             }
         }
     }
@@ -55,6 +61,16 @@ public class SortUtil {
             }
             return result;
         }
+        return null;
+    }
+
+    private static <T> List<T> heapSort(List<T> originList, Comparator<T> comparator) {
+        //TODO
+        return null;
+    }
+
+    private static <T> List<T> mergeSort(List<T> originList, Comparator<T> comparator) {
+        
         return null;
     }
 
