@@ -1,1 +1,2 @@
 # daily-common-test
+test
