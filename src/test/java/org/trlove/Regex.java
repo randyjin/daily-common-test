@@ -9,7 +9,9 @@ import java.util.regex.Pattern;
 public class Regex {
 
     public static void main(String[] args) {
-        String pattern = "[A-Za-z0-9]|\t|\r|\n";
+        System.out.println("hello/hello\\/".replaceAll("[/|\\\\]+$", ""));
+
+        /*String pattern = "[A-Za-z0-9]|\t|\r|\n";
         Pattern p = Pattern.compile(pattern);
         Matcher matcher = p.matcher("ab\tc");
         if(matcher.find()){
@@ -19,6 +21,6 @@ public class Regex {
         System.out.println(result);
         System.out.println("/uD835/uDD6B".codePointCount(0,2));
         System.out.println("/uD835/uDD6B".codePointAt(1));
-        System.out.println("/uD835/uDD6B");
+        System.out.println("/uD835/uDD6B");*/
     }
 }
