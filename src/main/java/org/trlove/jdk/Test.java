@@ -31,6 +31,7 @@ public class Test {
 	}
 
 	private static void lambdaTest() {
+		System.out.println(System.currentTimeMillis());
 		BigDecimal subResult = new BigDecimal("2.34").subtract(new BigDecimal("1.23"));
 		System.out.println(subResult.doubleValue());
 		// 所有只有一个抽象方法的接口都是函数式接口
