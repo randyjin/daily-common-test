@@ -1,2 +1,0 @@
-# daily-common-test
-test
