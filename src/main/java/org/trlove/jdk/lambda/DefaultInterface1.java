@@ -1,20 +1,24 @@
 /*
  * Copyright (C), 2014-2015, 杭州小卡科技有限公司
- * FileName: DefaultInterface2.java
+ * FileName: DefaultInterface1.java
  * Author:   yichao
  * Date:    2016/11/21 下午7:28
  * Description:
  */
-package org.trlove.jdk;
+package org.trlove.jdk.lambda;
 
 /**
- * DefaultInterface2
+ * DefaultInterface1
  *
  * @author yichao
  * @date 2016/11/21
  */
-public interface DefaultInterface2 {
+public interface DefaultInterface1 {
     default int getAge() {
         return 1;
+    }
+
+    static int getFF() {
+        return 100;
     }
 }

@@ -7,6 +7,8 @@
  */
 package org.trlove.common.test.util.joda;
 
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Maps;
 import org.joda.time.*;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -15,6 +17,7 @@ import org.trlove.common.test.util.guava.GuavaDemo;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Date;
+import java.util.Map;
 import java.util.TimeZone;
 
 /**
@@ -26,11 +29,17 @@ import java.util.TimeZone;
 public class JodaTest {
 
     public static void main(String[] args) {
+        System.out.println(DateTime.now().toDate().getTime());
+        Class clazz = Integer.class;
+        System.out.println(JSON.parseObject("1", clazz));
+        System.out.println(LocalDate.now().withDayOfWeek(DateTimeConstants.SUNDAY));
+        getWeekStartAndEnd(LocalDate.now().withDayOfWeek(DateTimeConstants.SUNDAY));
         dateTime();
     }
 
     public static void dateTime() {
         DateTime dateTime = DateTime.now();
+
 //        DateTime dateTimeWithTimeZone = DateTime.now(DateTimeZone.forTimeZone(TimeZone.getTimeZone("IST")));
         print(dateTime);
 //        print(dateTimeWithTimeZone);
@@ -54,6 +63,23 @@ public class JodaTest {
 
     private static void print(DateTime dateTime) {
         System.out.println(DateTimeFormat.forPattern("yyyy-MM-dd hh:mm:ss").print(dateTime));
+    }
+
+    private static void getWeekStartAndEnd(LocalDate localDate) {
+        int day = localDate.getDayOfWeek();
+        Map<String, Date> weekOfStartAndEndMap = Maps.newHashMap();
+        if(day == DateTimeConstants.SATURDAY || day == DateTimeConstants.SUNDAY) {
+            localDate = localDate.plusWeeks(1);
+        }
+        LocalDate monday = localDate.withDayOfWeek(DateTimeConstants.MONDAY);
+        Date start =  monday.minusDays(2).toDate();
+        Date end = localDate.withDayOfWeek(DateTimeConstants.FRIDAY).toDate();
+        weekOfStartAndEndMap.put("start", start);
+        weekOfStartAndEndMap.put("end", end);
+
+
+        System.out.println(start);
+        System.out.println(end);
     }
 
 }

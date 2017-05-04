@@ -69,7 +69,7 @@ public class Person implements Comparable {
 //        int result = age;
 //        result = 31 * result + (name != null ? name.hashCode() : 0);
 //        return result;
-        return Objects.hashCode(age, name);
+        return Objects.hashCode(name, age);
     }
 
     @Override

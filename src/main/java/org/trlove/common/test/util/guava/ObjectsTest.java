@@ -9,8 +9,10 @@ package org.trlove.common.test.util.guava;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
+import com.google.common.collect.Sets;
 
 import java.util.Comparator;
+import java.util.Set;
 
 /**
  * ObjectsTest
@@ -28,5 +30,11 @@ public class ObjectsTest {
             }
         });
         System.out.println(ordering.sortedCopy(Lists.newArrayList("a","c","b")));
+
+        Set<Person> pSet = Sets.newHashSet();
+        pSet.add(new Person(10, "randy"));
+        pSet.add(new Person(10, "tracy"));
+        pSet.add(new Person(11, "tracy"));
+        System.out.println(pSet);
     }
 }

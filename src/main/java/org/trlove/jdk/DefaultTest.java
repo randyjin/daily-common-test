@@ -7,6 +7,9 @@
  */
 package org.trlove.jdk;
 
+import org.trlove.jdk.lambda.DefaultInterface1;
+import org.trlove.jdk.lambda.DefaultInterface2;
+
 /**
  * DefaultTest
  *

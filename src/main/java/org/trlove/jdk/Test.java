@@ -7,6 +7,8 @@
  */
 package org.trlove.jdk;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import org.trlove.common.test.util.guava.Person;
@@ -31,6 +33,13 @@ public class Test {
 	}
 
 	private static void lambdaTest() {
+		System.out.println(Lists.newArrayList("world","hello","jack","randy").stream().filter(s -> s.length()>4).count());
+		Class clazz = String.class;
+		String content = "'aaa'";
+//		if (clazz.equals(String.class)) {
+//			content = "'" + content + "'";
+//		}
+		JSON.parseObject(content,clazz);
 		System.out.println(System.currentTimeMillis());
 		BigDecimal subResult = new BigDecimal("2.34").subtract(new BigDecimal("1.23"));
 		System.out.println(subResult.doubleValue());
