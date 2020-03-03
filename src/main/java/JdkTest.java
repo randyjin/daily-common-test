@@ -5,7 +5,6 @@
  * Date:    16/9/28 下午9:47
  * Description:
  */
-package org.trlove;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
