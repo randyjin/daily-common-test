@@ -7,6 +7,8 @@
  */
 package org.trlove.common.test.util.guava;
 
+import com.google.common.collect.Lists;
+import com.google.common.reflect.TypeToken;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
@@ -15,7 +17,11 @@ import org.joda.time.Period;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * JodaTest
@@ -25,9 +31,6 @@ import java.util.Date;
  */
 public class JodaTest {
     public static void main(String[] args) {
-        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
-        DateTime dateTime = DateTime.parse("2016-02-29", formatter);
-        System.out.println(dateTime.plusYears(1));
     }
 
     private void deadDemo() {

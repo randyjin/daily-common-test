@@ -9,6 +9,8 @@ package org.trlove.common.test.util.guava;
 
 import com.google.common.base.Objects;
 
+import java.math.BigDecimal;
+
 /**
  * Person
  *
@@ -18,6 +20,7 @@ import com.google.common.base.Objects;
 public class Person implements Comparable {
     private int age;
     private String name;
+    private BigDecimal amount;
 
     public Person() {
     }
@@ -26,6 +29,11 @@ public class Person implements Comparable {
         this.age = age;
     }
 
+    public Person(int age, String name, BigDecimal a) {
+        this.age = age;
+        this.name = name;
+        this.amount = a;
+    }
     public Person(int age, String name) {
         this.age = age;
         this.name = name;
@@ -41,6 +49,14 @@ public class Person implements Comparable {
 
     public String getName() {
         return name;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public void setName(String name) {
@@ -59,8 +75,7 @@ public class Person implements Comparable {
 
         Person person = (Person) o;
 
-        if (age != person.age) return false;
-        return name != null ? name.equals(person.name) : person.name == null;
+        return name.equals(person.getName());
 
     }
 
@@ -69,7 +84,7 @@ public class Person implements Comparable {
 //        int result = age;
 //        result = 31 * result + (name != null ? name.hashCode() : 0);
 //        return result;
-        return Objects.hashCode(age, name);
+        return Objects.hashCode(age);
     }
 
     @Override
