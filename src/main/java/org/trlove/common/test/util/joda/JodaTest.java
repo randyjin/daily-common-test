@@ -26,7 +26,7 @@ import java.util.TimeZone;
 public class JodaTest {
 
     public static void main(String[] args) {
-        dateTime();
+        testPlus();
     }
 
     public static void dateTime() {
@@ -54,6 +54,14 @@ public class JodaTest {
 
     private static void print(DateTime dateTime) {
         System.out.println(DateTimeFormat.forPattern("yyyy-MM-dd hh:mm:ss").print(dateTime));
+    }
+
+    private static void testPlus() {
+        Date date = new Date();
+        System.out.println(new DateTime(date).plusMonths(1).millisOfDay().withMinimumValue().toString("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(new DateTime(date).plusMonths(2).millisOfDay().withMinimumValue().toString("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(new DateTime(date).plusMonths(3).millisOfDay().withMinimumValue().toString("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(new DateTime(date).plusMonths(4).millisOfDay().withMinimumValue().toString("yyyy-MM-dd HH:mm:ss"));
     }
 
 }
