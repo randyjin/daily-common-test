@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,9 @@ import org.apache.commons.lang3.StringUtils;
 public class JdkTest {
 
     public static void main(String[] args) {
-        test5();
+        String a = "65210,65210,355119,355119,673429,673429,738883,738883,820698,820698,824067,824067,982496,982496,1029088,1029088,1094515,1094515,1102445,1102445,1250705,1250705,1267748,1267748,1342141,1342141,1487434,1487434,1501573,1501573,1683988,1683988,1704188,1704188,1744678,1744678,1749851,1749851,1754190,1754190,1780678,1780678,1793052,1793052,1794027,1794027,1807263,1807263,1809688,1809688,1855300,1855300,1970658,1970658,2058161,2058161";
+        System.out.println(Sets.newHashSet(a.split(",")));
+//        test5();
 //        test4();
 //        test1();
 //        test2();
